@@ -36,7 +36,6 @@ let team = [
     }
 ]
 
-console.log(team);
 
 // VARIABILI
 const teamCont = document.querySelector(".team-container");
@@ -44,18 +43,26 @@ let teamCard = "";
 
 // ATTRAVERO UN CICLO INSERISCO TUTTE LE SCHEDE DEL TEAM
 for (i = 0; i < team.length; i++) {
-    console.log(i);
+    let nameCand = "";
+    let imgCand = "";
+    let roleCand = "";
+
+    for (let key in team) {
+        nameCand = team[i].nameTeam;
+        imgCand = team[i].imgteam;
+        roleCand = team[i].roleTeam;
+    }
     teamCard += `
     <div class="team-card">
             <div class="card-image">
               <img
-                src="img/wayne-barnett-founder-ceo.jpg"
-                alt="Wayne Barnett"
+                src="${imgCand}"
+                alt="${nameCand}"
               />
             </div>
             <div class="card-text">
-              <h3>Wayne Barnett</h3>
-              <p>Founder & CEO</p>
+              <h3>${nameCand}</h3>
+              <p>${roleCand}</p>
             </div>
           </div>`
 }
